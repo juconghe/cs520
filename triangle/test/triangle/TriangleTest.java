@@ -114,7 +114,7 @@ public class TriangleTest {
     @Test //karen test isoceles
     public void testIsosceles2() {
       Type actual = Triangle.classify(3, 3, 10);
-      Type expected = ISOSCELES;
+      Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
@@ -128,14 +128,14 @@ public class TriangleTest {
     @Test //karen test isoceles
     public void testIsosceles4() {
       Type actual = Triangle.classify(3, 7, 3);
-      Type expected = ISOSCELES;
+      Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
     @Test //karen test isoceles
     public void testIsosceles5() {
       Type actual = Triangle.classify(7, 3, 3);
-      Type expected = ISOSCELES;
+      Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
