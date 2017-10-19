@@ -378,23 +378,30 @@ public class TriangleTest {
       assertEquals(actual, expected);
     }
 
-    @Test //unsure if it can be killed
+    @Test //killed
     public void mutation9() {
-      Type actual = Triangle.classify(3, 0, 3);
+      Type actual = Triangle.classify(3, -1, 3);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
-    @Test //unsure if it can be killed
+    @Test //unkillable
+    public void mutation11() {
+      Type actual = Triangle.classify(1,-1,1);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //killed
     public void mutation4() {
-      Type actual = Triangle.classify(0, 3, 3);
+      Type actual = Triangle.classify(-1, 3, 3);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
-    @Test //unsure if it can be killed
+    @Test //killed
     public void mutation59() {
-      Type actual = Triangle.classify(3, 3, 0);
+      Type actual = Triangle.classify(3, 3, -1);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
@@ -462,6 +469,8 @@ public class TriangleTest {
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
+
+
 
   //End of Caitlyn's mutant killing process
 
