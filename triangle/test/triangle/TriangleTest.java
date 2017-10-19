@@ -11,141 +11,235 @@ import static triangle.Triangle.Type.*;
  */
 public class TriangleTest {
 
-    @Test
-    public void test1() {
-        Type actual = Triangle.classify(10, 10, 10);
-        Type expected = EQUILATERAL;
-        assertEquals(actual, expected);
+    @Test //Jucong test for INVALID
+    public void test_invalid() {
+      Triangle t = new Triangle();
+      Type actual = Triangle.classify(-1,2,3);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
     }
 
-    @Test
+
+    @Test //Karen test invalid first if condition
     public void testInvalid() {
       Type actual = Triangle.classify(0, 0, 0);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
-    @Test
+    @Test //karen test invalid first if condition
     public void testInvalid2() {
       Type actual = Triangle.classify(1, 0, 0);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
-    @Test
+    @Test//karen test invalid first if condition
     public void testInvalid3() {
       Type actual = Triangle.classify(1, 1, 0);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
-    @Test
+    @Test //karen test for ISOSCELES
     public void test4() {
       Type actual = Triangle.classify(3, 3, 4);
       Type expected = ISOSCELES;
       assertEquals(actual, expected);
     }
 
-    @Test
+    @Test //karen test for scalene
     public void test5() {
       Type actual = Triangle.classify(3, 4, 3);
       Type expected = ISOSCELES;
       assertEquals(actual, expected);
     }
 
-    @Test
+    @Test //karen test for isoceles
     public void test6() {
       Type actual = Triangle.classify(4, 3, 3);
       Type expected = ISOSCELES;
       assertEquals(actual, expected);
     }
 
-    @Test
+    @Test //karen test for ivalid
     public void test7() {
       Type actual = Triangle.classify(3, 1, 6);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
-    @Test
+    @Test //karen test for invalid
     public void test8() {
       Type actual = Triangle.classify(3, 6, 1);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
-    @Test
+    @Test //karen test invalid
     public void test9() {
       Type actual = Triangle.classify(6, 1, 3);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
 
-    @Test
-    public void test10() {
+    @Test //karen test scalene
+    public void testScalene() {
       Type actual = Triangle.classify(3, 5, 6);
       Type expected = SCALENE;
       assertEquals(actual, expected);
     }
 
-    @Test
-    public void test11() {
+    @Test //karen test scalene
+    public void testScalene2() {
       Type actual = Triangle.classify(3, 6, 5);
       Type expected = SCALENE;
       assertEquals(actual, expected);
     }
 
-    @Test
-    public void test12() {
+    @Test //karen test scalene
+    public void testScalene3() {
       Type actual = Triangle.classify(6, 3, 5);
       Type expected = SCALENE;
       assertEquals(actual, expected);
     }
 
-    @Test
-    public void test13() {
+    @Test //karen test isoceles
+    public void testIsosceles() {
       Type actual = Triangle.classify(3, 3, 5);
       Type expected = ISOSCELES;
       assertEquals(actual, expected);
     }
 
-    @Test
-    public void test14() {
+    @Test //karen test isoceles
+    public void testIsosceles2() {
       Type actual = Triangle.classify(3, 3, 10);
       Type expected = ISOSCELES;
       assertEquals(actual, expected);
     }
 
-    @Test
-    public void test15() {
+    @Test //karen test isoceles
+    public void testIsosceles3() {
       Type actual = Triangle.classify(3, 1, 3);
       Type expected = ISOSCELES;
       assertEquals(actual, expected);
     }
 
-    @Test
-    public void test16() {
+    @Test //karen test isoceles
+    public void testIsosceles4() {
       Type actual = Triangle.classify(3, 7, 3);
       Type expected = ISOSCELES;
       assertEquals(actual, expected);
     }
 
-    @Test
-    public void test17() {
+    @Test //karen test isoceles
+    public void testIsosceles5() {
       Type actual = Triangle.classify(7, 3, 3);
       Type expected = ISOSCELES;
       assertEquals(actual, expected);
     }
 
-    @Test
-    public void test18() {
+    @Test //karen test isoceles
+    public void testIsosceles6() {
       Type actual = Triangle.classify(1, 3, 3);
       Type expected = ISOSCELES;
       assertEquals(actual, expected);
     }
 
-    @Test
+    @Test //Karen test for default constructor
     public void testDefaultConstructor() {
       Triangle t = new Triangle();
     }
+
+    @Test //Jucong test for INVALID not 0/-1 number
+    public void test_invalid_2() {
+      Type actual = Triangle.classify(1,2,4);
+      Type expected = INVALID;
+      assertEquals(actual,expected);
+    }
+
+    @Test //Jucong test for INVALID
+    public void test_invalid_3() {
+      Type actual = Triangle.classify(2,-1,3);
+      Type expected = INVALID;
+      assertEquals(actual,expected);
+    }
+
+    @Test  //Jucong test for INVALID
+    public void test_invalid_4() {
+      Type actual = Triangle.classify(2,3,-1);
+      Type expected = INVALID;
+      assertEquals(actual,expected);
+    }
+
+    @Test //Jucong test for INVALID not 0/-1 number
+    public void test_invalid_5() {
+      Type actual = Triangle.classify(1,5,4);
+      Type expected = INVALID;
+      assertEquals(actual,expected);
+    }
+
+    @Test //Jucong test for INVALID not 0/-1 number
+    public void test_invalid_6() {
+      Type actual = Triangle.classify(5,1,4);
+      Type expected = INVALID;
+      assertEquals(actual,expected);
+    }
+
+    @Test //Jucong test for INVALID not 0/-1 number
+    public void test_invalid_7() {
+      Type actual = Triangle.classify(2,100,2);
+      Type expected = INVALID;
+      assertEquals(actual,expected);
+    }
+
+    @Test //Jucong test for INVALID not 0/-1 number
+    public void test_invalid_8() {
+      Type actual = Triangle.classify(100,2,2);
+      Type expected = INVALID;
+      assertEquals(actual,expected);
+    }
+
+    @Test //Jucong test for EQUILATERAL
+    public void test_equilateral() {
+      Type actual = Triangle.classify(1,1,1);
+      Type expected = EQUILATERAL;
+      assertEquals(actual,expected);
+    }
+
+    @Test //Jucong test for SCALENE
+    public void test_scalene() {
+      Type actual = Triangle.classify(2,3,4);
+      Type expected = SCALENE;
+      assertEquals(actual,expected);
+    }
+
+    @Test // Jucong test for ISOSCELES
+    public void test_isosceles_1() {
+      Type actual = Triangle.classify(1,2,2);
+      Type expected = ISOSCELES;
+      assertEquals(actual,expected);
+    }
+
+    @Test // Jucong test for ISOSCELES
+    public void test_isosceles_2() {
+      Type actual = Triangle.classify(2,1,2);
+      Type expected = ISOSCELES;
+      assertEquals(actual,expected);
+    }
+
+    @Test // Jucong test for ISOSCELES
+    public void test_isosceles_3() {
+      Type actual = Triangle.classify(2,2,1);
+      Type expected = ISOSCELES;
+      assertEquals(actual,expected);
+    }
+
+    @Test // Jucong test for ISOSCELES
+    public void test_isosceles_4() {
+      Type actual = Triangle.classify(2,2,100);
+      Type expected = INVALID;
+      assertEquals(actual,expected);
+    }
+
 }
