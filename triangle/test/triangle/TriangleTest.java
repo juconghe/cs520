@@ -406,9 +406,9 @@ public class TriangleTest {
       assertEquals(actual, expected);
     }
 
-    @Test //unkillable
-    public void mutation101() {
-      Type actual = Triangle.classify(40, 0, 40);
+    @Test //killed
+    public void mutation105() {
+      Type actual = Triangle.classify(40, 40, 120);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
@@ -420,9 +420,9 @@ public class TriangleTest {
       assertEquals(actual, expected);
     }
 
-    @Test //when is a=b and a*b>c but a+b !> c  unkillable
-    public void mutation105() {
-      Type actual = Triangle.classify(2,2, 4);
+    @Test //unkillable
+    public void mutation101() {
+      Type actual = Triangle.classify(2,2,4);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
