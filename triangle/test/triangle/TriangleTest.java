@@ -11,6 +11,7 @@ import static triangle.Triangle.Type.*;
  */
 public class TriangleTest {
 
+
     @Test //Jucong test for INVALID
     public void test_invalid() {
       Triangle t = new Triangle();
@@ -242,4 +243,123 @@ public class TriangleTest {
       assertEquals(actual,expected);
     }
 
+    //TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM
+    //statement coverage
+    @Test
+    //first if invalid
+    public void test_first_if1 () {
+        Type actual = Triangle.classify(0, 0, 0);
+        Type expected = INVALID;
+        assertEquals(actual, expected);
+    }
+    //scalene
+    @Test
+    public void test_first_scalene () {
+        Type actual = Triangle.classify(9, 13, 14);
+        Type expected = SCALENE;
+        assertEquals(actual, expected);
+    }
+    //equilateral
+    @Test
+    public void test_equilateral_tim () {
+        Type actual = Triangle.classify(10, 10, 10);
+        Type expected = EQUILATERAL;
+        assertEquals(actual, expected);
+    }
+
+    //isosceles
+    @Test
+    public void test_first_isos () {
+        Type actual = Triangle.classify(5, 5, 4);
+        Type expected = ISOSCELES;
+        assertEquals(actual, expected);
+    }
+    //isosceles
+    @Test
+    public void test_sec_isos () {
+        Type actual = Triangle.classify(5, 4, 5);
+        Type expected = ISOSCELES;
+        assertEquals(actual, expected);
+    }
+    //isosceles
+    @Test
+    public void test_third_isos () {
+        Type actual = Triangle.classify(4, 5, 5);
+        Type expected = ISOSCELES;
+        assertEquals(actual, expected);
+    }
+
+    //constructor
+    @Test
+    public void test_constructor() {
+      Triangle t = new Triangle();
+    }
+
+    //line coverage
+    //for line 20
+    @Test
+    public void test_first_if2 () {
+      Type actual = Triangle.classify(1, 0, 1);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+    //invalid
+    @Test
+    public void test_first_if3 () {
+      Type actual = Triangle.classify(1, 1, 0);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test
+    public void test_first_if4 () {
+      Type actual = Triangle.classify(0, 1, 1);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    //trian = 0
+    @Test
+    public void test_invalidtrian_zero1() {
+      Type actual = Triangle.classify(2, 10, 13);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+    //trian = 0
+    @Test
+    public void test_invalidtrian_zero2 () {
+      Type actual = Triangle.classify(2, 15, 13);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+    //trian = 0
+    @Test
+    public void test_invalidtrian_zero3 () {
+      Type actual = Triangle.classify(30, 15, 13);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test
+    public void test_invalidtrian_one () {
+      Type actual = Triangle.classify(2, 2, 100);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+    //trian = 2
+    @Test
+    public void test_invalidtrian_two () {
+      Type actual = Triangle.classify(30, 70, 30);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    //trian = 3
+    @Test
+    public void test_invalidtrian_three () {
+      Type actual = Triangle.classify(200, 50, 50);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+    //TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM
 }
