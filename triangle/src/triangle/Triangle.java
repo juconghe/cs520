@@ -11,7 +11,7 @@ public class Triangle {
     public static enum Type {
         INVALID, SCALENE, EQUILATERAL, ISOSCELES
     };
-    
+
     /**
      * This static method does the actual classification of a triangle, given the lengths
      * of its three sides.
