@@ -362,4 +362,111 @@ public class TriangleTest {
       assertEquals(actual, expected);
     }
     //TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM TIM
+
+    //Caitlyn's mutant killing process
+    @Test //killed
+    public void mutation66() {
+      Type actual = Triangle.classify(1, 2, 3);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //killed
+    public void mutation16() {
+      Type actual = Triangle.classify(3, 3, -1);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //unsure if it can be killed
+    public void mutation9() {
+      Type actual = Triangle.classify(3, 0, 3);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //unsure if it can be killed
+    public void mutation4() {
+      Type actual = Triangle.classify(0, 3, 3);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //unsure if it can be killed
+    public void mutation59() {
+      Type actual = Triangle.classify(3, 3, 0);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //unkillable
+    public void mutation101() {
+      Type actual = Triangle.classify(40, 0, 40);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //killed
+    public void mutation109() {
+      Type actual = Triangle.classify(1, 1, 2);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //when is a=b and a*b>c but a+b !> c  unkillable
+    public void mutation105() {
+      Type actual = Triangle.classify(2,2, 4);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //a==b==a+b>c unkillable
+    public void mutation111() {
+      Type actual = Triangle.classify(1,1, 1);
+      Type expected = EQUILATERAL;
+      assertEquals(actual, expected);
+    }
+
+
+    @Test //killed
+    public void mutation126() {
+      Type actual = Triangle.classify(4,2, 2);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test // b==c, a+c=2, >b unkillable
+    public void mutation128() {
+      Type actual = Triangle.classify(1,2, 1);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+    @Test //killed
+    public void mutation143() {
+      Type actual = Triangle.classify(4,4, 4);
+      Type expected = EQUILATERAL;
+      assertEquals(actual, expected);
+    }
+
+    @Test //unkillable
+    public void mutation136() {
+      Type actual = Triangle.classify(4,4, 4);
+      Type expected = EQUILATERAL;
+      assertEquals(actual, expected);
+    }
+
+    @Test //unkillable
+    public void mutation145() {
+      Type actual = Triangle.classify(4,1,2);
+      Type expected = INVALID;
+      assertEquals(actual, expected);
+    }
+
+  //End of Caitlyn's mutant killing process
+
+
+
+
+
 }
