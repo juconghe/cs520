@@ -387,7 +387,7 @@ public class TriangleTest {
 
     @Test //unkillable
     public void mutation11() {
-      Type actual = Triangle.classify(1,-1,1);
+      Type actual = Triangle.classify(-2147483647, -2147483647, 1);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
@@ -465,7 +465,7 @@ public class TriangleTest {
 
     @Test //unkillable
     public void mutation145() {
-      Type actual = Triangle.classify(4,1,2);
+      Type actual = Triangle.classify(10, 2, 2);
       Type expected = INVALID;
       assertEquals(actual, expected);
     }
